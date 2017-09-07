@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * 在JavaScript中定义了以下几种数据类型：
+         */
+        // 1.Number
+        /*
+        JavaScript不区分整数和浮点数，统一用Number表示，以下都是合法的Number类型：
+        123; // 整数123
+        0.456; // 浮点数0.456
+        1.2345e3; // 科学计数法表示1.2345x1000，等同于1234.5
+        -99; // 负数
+        NaN; // NaN表示Not a Number，当无法计算结果时用NaN表示
+        Infinity; // Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity
+        */
+        console.log("2 / 0" + 2 / 0); // Infinity
+        console.log("0 / 0" + 0 / 0); // NaN
+        // 2.字符串
+        // 3.布尔型
+        /*
+         第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；
+         第二种是===比较，它不会自动转换数据类型，如果数据类型不一致，返回false，如果一致，再比较。
+         由于JavaScript这个设计缺陷，不要使用==比较，始终坚持使用===比较。
+         */
+        alert(false == 0); // true
+        alert(false === 0); // false
+        // 另一个例外是NaN这个特殊的Number与所有其他值都不相等，包括它自己：
+        console.log(NaN === NaN); // false
+        // 唯一能判断NaN的方法是通过isNaN()函数：
+        console.log(isNaN(NaN)); // true
+    </script>
+</head>
+<body>
+
+</body>
+</html>
