@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        'use strict';
+        /**
+         * Map类型
+         * JavaScript的默认对象表示方式{}可以视为其他语言中的Map或Dictionary的数据结构，即一组键值对。
+         * 但是JavaScript的对象有个小问题，就是键必须是字符串。但实际上Number或者其他数据类型作为键也是非常合理的。
+         * 为了解决这个问题，最新的ES6规范引入了新的数据类型Map和Set。
+         */
+        // 第一种初始化方法:
+        var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+        m.get('Michael'); // 95
+        console.log(m);
+        // 第二种初始化方法:
+        var m = new Map(); // 空Map
+        m.set('Adam', 67); // 添加新的key-value
+        m.set('Bob', 59);
+        m.has('Adam'); // 是否存在key 'Adam': true
+        m.get('Adam'); // 67
+        m.delete('Adam'); // 删除key 'Adam'
+        m.get('Adam'); // undefined
+        console.log(m);
+
+        /**
+         * Set类型
+         * 无序且不可重复的集合。
+         */
+        // 第一种定义方法:
+        var s1 = new Set(); // 空Set
+        var s2 = new Set([1, 2, 3]); // 含1, 2, 3
+        // 重复元素在Set中自动被过滤：
+        var s = new Set([1, 2, 3, 3, '3']);
+        console.log(s); // Set {1, 2, 3, "3"}
+        s.add(4);
+        s.delete(1);
+        console.log(s);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

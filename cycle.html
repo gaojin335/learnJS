@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        'use strict';
+        // for循环最常用的地方是利用索引来遍历数组：
+        var arr = ['Apple', 'Google', 'Microsoft'];
+        var i, x;
+        for(i = 0; i < arr.length; i++) {
+            x = arr[i];
+            console.log(x);
+        }
+        // for ...in
+        for(var i in arr) {
+            console.log(arr[i]); // 数组遍历出来是索引:0 1 2
+        }
+        var o = {
+            name: 'Jack',
+            age: 20,
+            city: 'Beijing'
+        };
+        for (var key in o) {
+            console.log(key); // 'name', 'age', 'city'
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -17,21 +17,57 @@
         NaN; // NaN表示Not a Number，当无法计算结果时用NaN表示
         Infinity; // Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity
         */
-        console.log("2 / 0" + 2 / 0); // Infinity
-        console.log("0 / 0" + 0 / 0); // NaN
+        console.log("2 / 0 = " + 2 / 0); // Infinity
+        console.log("0 / 0 = " + 0 / 0); // NaN
         // 2.字符串
         // 3.布尔型
         /*
          第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；
          第二种是===比较，它不会自动转换数据类型，如果数据类型不一致，返回false，如果一致，再比较。
          由于JavaScript这个设计缺陷，不要使用==比较，始终坚持使用===比较。
+         JavaScript把null、undefined、0、NaN、Infinity和空字符串''视为false，其他值一概视为true，因此上述代码条件判断的结果是true。
          */
-        alert(false == 0); // true
-        alert(false === 0); // false
+        console.log("false == 0 = " + (false == 0)); // true
+        console.log("false === 0 = " + (false === 0)); // false
         // 另一个例外是NaN这个特殊的Number与所有其他值都不相等，包括它自己：
-        console.log(NaN === NaN); // false
+        console.log("NaN === NaN = " + (NaN === NaN)); // false
         // 唯一能判断NaN的方法是通过isNaN()函数：
-        console.log(isNaN(NaN)); // true
+        console.log("isNaN(NaN) = " + isNaN(NaN)); // true
+        // 4.null和undefined
+        console.log("false == null = " + (true == null));
+        console.log("false == 0 = " + (true == 0));
+        console.log("false == '' = " + (true == ''));
+        console.log("true == 1 = " + (true == 1));
+        // 5.数组
+        var arr = [1, 2, 3.14, 'Hello', null, true];
+        console.log("数组的第2个元素是:" + arr[2]);
+        // 6.对象
+        // JavaScript的对象是一组由键-值组成的无序集合
+        var person = {
+            name: 'Bob',
+            age: 20,
+            tags: ['js', 'web', 'mobile'],
+            city: 'Beijing',
+            hasCar: true,
+            zipcode: null
+        };
+        console.log("姓名:" + person.name);
+
+        // ------------------------------------------------------------------------------------------
+        // 变量
+        // 变量在JavaScript中就是用一个变量名表示，变量名是大小写英文、数字、$和_的组合，且不能用数字开头。
+        // 声明一个变量并赋值:
+        var a = 123;
+        a = 'ABC'; // 这种变量类型不固定的语言称为动态语言。
+
+        // ------------------------------------------------------------------------------------------
+        // strict模式
+        /**
+         * 启用strict模式的方法是在JavaScript代码的第一行写上：'use strict';
+         * 如果一个变量没有通过var申明就被使用，那么该变量就自动被申明为全局变量。
+         * 为了修补JavaScript这一严重设计缺陷，ECMA在后续规范中推出了strict模式，
+         * 在strict模式下运行的JavaScript代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误。
+         */
     </script>
 </head>
 <body>
